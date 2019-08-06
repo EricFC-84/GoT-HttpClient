@@ -1,0 +1,8 @@
+<div *ngIf="_viewManager.currentView == 'book'">
+
+  <p>book-view works!</p>
+
+  <h2>{{_viewManager.currentBook["name"]}}</h2>
+
+  <button (click)="back()">Back</button>
+</div>

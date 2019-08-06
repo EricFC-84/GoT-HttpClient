@@ -1,0 +1,6 @@
+<div *ngIf="_viewManager.currentView == 'char'">
+
+  <p>char-view works!</p>
+  <h1>{{_viewManager.currentChar["name"]}}</h1>
+  <h4>House: <span (click)=loadHouse()>{{_viewManager.currentChar["allegiances"]}}</span></h4>
+</div>
