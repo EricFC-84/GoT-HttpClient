@@ -1,0 +1,22 @@
+#sidebar{
+    background-color: #343a40;
+    height: 100vh;
+}
+
+.book-btn{
+    text-align: left;
+    padding-left: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    border-radius: 15px;
+}
+
+.book-btn:hover{
+    cursor: pointer;
+}
+
+.logoPic{
+    width: 50%;
+    text-align: center;
+    margin: 35px 0;
+}

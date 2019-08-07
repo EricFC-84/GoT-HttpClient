@@ -1,0 +1,23 @@
+.bookView{
+    margin-top: 3em;
+}
+.coverPic{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    box-shadow: -5px 5px 5px;
+}
+
+.charName:hover{
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 993px) {
+   .coverPic{
+    height: 50vh;
+    width: auto;
+   } 
+
+}

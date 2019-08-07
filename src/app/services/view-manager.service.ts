@@ -7,11 +7,15 @@ import {
 })
 export class ViewManagerService {
 
-  currentView: string = "book";
-  currentBook: object = {};
+  listBooks:object[] = [];
+  currentView: string = "";
+  currentBook: number = 0;
+  currentBookChars: object[] = [];
   currentChar: object = {};
+  currentCharHouses: string[] = [];
   currentHouse: object = {};
   previousView = "";
+
 
   setView(view: string): void {
     this.previousView = this.currentView;
@@ -22,8 +26,8 @@ export class ViewManagerService {
     this.currentView = this.previousView;
   }
 
-  setCurrentBook(book: object): void {
-    this.currentBook = book;
+  setCurrentBook(bookIndex: number): void {
+    this.currentBook = bookIndex;
   }
   setCurrentChar(char: object): void {
     this.currentChar = char;

@@ -1,8 +1,40 @@
-<div *ngIf="_viewManager.currentView == 'book'">
+<div *ngIf="_viewManager.currentView == 'book' || _viewManager.currentView == 'char'">
 
-  <p>book-view works!</p>
+  <div class="container bookView">
+    <!-- <button (click)="back()" class="btn btn-dark mr-auto my-4">Back</button> -->
 
-  <h2>{{_viewManager.currentBook["name"]}}</h2>
+    <br>
+    <div class="row">
+      <div class="col-lg-5 col-md-12">
+        <img [src]="'../../assets/book' + _viewManager.currentBook +'.jpg'" alt="Book cover" class="coverPic">
+      </div>
+      <div class="col-lg-7 col-md-12">
+        <h2>{{_viewManager.listBooks[_viewManager.currentBook]["name"]}}</h2>
+        <h5 *ngFor="let author of _viewManager.listBooks[_viewManager.currentBook]['authors']">{{author}}</h5>
+        <p>{{releasedDate()}}</p>
+        <hr>
+        <h3>List of main characters</h3>
+        <div class="row">
+          <div *ngFor="let char of _viewManager.currentBookChars; let i = 'index'" class="col-6">
+            <p (click)="loadCharData(char)" class="charName">{{char["name"]}}</p>
+          </div>
+        </div>
+      </div>
 
-  <button (click)="back()">Back</button>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12">
+      <app-char-view></app-char-view>
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
 </div>

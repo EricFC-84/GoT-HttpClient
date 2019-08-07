@@ -1,6 +1,29 @@
 <div *ngIf="_viewManager.currentView == 'char'">
 
-  <p>char-view works!</p>
-  <h1>{{_viewManager.currentChar["name"]}}</h1>
-  <h4>House: <span (click)=loadHouse()>{{_viewManager.currentChar["allegiances"]}}</span></h4>
+  <div class="container mt-5">
+
+    <div class="row">
+
+      <div class="col-7">
+
+        <h2>{{_viewManager.currentChar["name"]}}</h2>
+
+        <h4>House: <span class="charData" *ngFor="let house of _viewManager.currentChar['allegiances']; let i = 'index'" (click)="loadHouseView(house)"> 
+         {{_viewManager.currentCharHouses[i]}}</span></h4>
+
+        <h4 *ngIf="_viewManager.currentChar['playedBy'] != ''">
+          Played by: <span class="charData">{{_viewManager.currentChar["playedBy"]}}</span>
+        </h4>
+      </div>
+
+      <div class="col-5">
+        <img [src]="loadCharPhoto()" alt="" class="charPic">
+
+
+      </div>
+    </div>
+
+  </div>
+
+
 </div>

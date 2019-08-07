@@ -16,16 +16,29 @@ import {
 })
 export class CharViewComponent implements OnInit {
 
-  loadHouse() {
+  loadHouse(url:string) {
     // console.log(this._viewManager.currentChar["allegiances"][0])
-    let url = this._viewManager.currentChar["allegiances"][0];
+    this._api.get(url).
+    subscribe(
+      (response) => {
+        return response["name"];
+      }
+
+    )
+  }
+
+loadCharPhoto():string{
+  let url = '../../assets/chars/' + this._viewManager.currentChar['name'].replace(/\s/g, '') + '.jpg';
+  
+  return url;
+}
+  loadHouseView(url:string) {
+    // console.log(this._viewManager.currentChar["allegiances"][0])
     this._api.get(url).
     subscribe(
       (response) => {
         this._viewManager.currentHouse = response;
         this._viewManager.setView("house");
-
-        console.log("House:", response)
       }
 
 

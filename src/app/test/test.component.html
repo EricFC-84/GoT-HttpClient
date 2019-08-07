@@ -22,17 +22,14 @@
 <!-- With sidebar -->
 
 <nav class="d-none d-md-block sidebar" id="sidebar">
-  <div class="sidebar-sticky">
-    <h3 class="brand"><i class="fab fa-spotify"> Ericfy</i></h3>
+  <div class="sidebar-sticky text-center">
 
+    <img src="../../assets/GoT-Logo.png" class="logoPic brand">
 
-    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-light">
-      <span>TU BIBLIOTECA</span>
-
-    </h6>
+   
     <ul class="nav flex-column mb-2">
-      <li class="nav-item" *ngFor="let book of listBooks">
-        <p class="nav-link" (click)="loadBookData(book)">
+      <li class="nav-item" *ngFor="let book of _viewManager.listBooks; let i = 'index'">
+        <p class="nav-link btn btn-dark book-btn mb-0 " (click)="loadBookData(i)">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="feather feather-file-text">

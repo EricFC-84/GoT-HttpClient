@@ -1,0 +1,20 @@
+.charPic{
+    width: auto;
+    height: 75%;
+    max-height: 40vh;
+    /* overflow: hidden; */
+    box-shadow: 5px 5px 5px; 
+    
+}
+
+.charData{
+    color: white;
+    font-weight: bold;
+    display: block;
+    
+}
+
+.container{
+   text-align: right;
+
+}
